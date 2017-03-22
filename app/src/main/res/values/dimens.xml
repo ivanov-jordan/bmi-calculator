@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="big_margin">72dp</dimen>
+    <dimen name="result_width">256dp</dimen>
+    <dimen name="result_height">256dp</dimen>
+    <dimen name="result_font_size">48sp</dimen>
+    <dimen name="label_font_size">20sp</dimen>
+    <dimen name="input_font_size">20sp</dimen>
+    <dimen name="error_font_size">20sp</dimen>
+</resources>
