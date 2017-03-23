@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void doCalculate(View view) {
+    public void submitForm(View view) {
         String heightStr = ((EditText) findViewById(R.id.heightInput)).getText().toString();
         String weightStr = ((EditText) findViewById(R.id.weightInput)).getText().toString();
 
