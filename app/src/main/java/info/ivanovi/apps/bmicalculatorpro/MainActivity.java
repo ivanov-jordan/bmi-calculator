@@ -11,15 +11,25 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String MESSAGE_RESULT = "bmicalculatorpro.MainActivity.RESULT";
 
+    private EditText heightInput;
+    private EditText weightInput;
+
+    private TextView errorView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        heightInput = (EditText) findViewById(R.id.heightInput);
+        weightInput = (EditText) findViewById(R.id.weightInput);
+
+        errorView = (TextView) findViewById(R.id.errorLabel);
     }
 
     public void submitForm(View view) {
-        String heightStr = ((EditText) findViewById(R.id.heightInput)).getText().toString();
-        String weightStr = ((EditText) findViewById(R.id.weightInput)).getText().toString();
+        String heightStr = heightInput.getText().toString();
+        String weightStr = weightInput.getText().toString();
 
         if (validateFields(heightStr, weightStr)) {
             int height = Integer.parseInt(heightStr);
@@ -47,13 +57,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showErrorView(int resId) {
-        TextView errorView = (TextView) findViewById(R.id.errorLabel);
         errorView.setText(resId);
         errorView.animate().setDuration(500).alpha(1);
     }
 
     private void hideErrorView() {
-        TextView errorView = (TextView) findViewById(R.id.errorLabel);
         errorView.setText("");
         errorView.setAlpha(0);
     }
