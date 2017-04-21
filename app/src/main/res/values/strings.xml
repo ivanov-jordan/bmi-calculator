@@ -12,4 +12,6 @@
     <string name="error_weight_invalid">The entered weight is invalid.</string>
     <string name="error_height_empty">Please enter height.</string>
     <string name="error_height_invalid">The entered height is invalid.</string>
+    <string name="title_activity_history">History</string>
+    <string name="label_history">History</string>
 </resources>

@@ -7,4 +7,6 @@
     <dimen name="label_font_size">20sp</dimen>
     <dimen name="input_font_size">20sp</dimen>
     <dimen name="error_font_size">20sp</dimen>
+    <dimen name="history_row_horizontal">16dp</dimen>
+    <dimen name="history_row_vertical">10dp</dimen>
 </resources>

@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void showHistory(View view) {
+        startActivity(new Intent(this, HistoryActivity.class));
+    }
+
     private boolean validateFields(String heightStr, String weightStr) {
         if (weightStr == null || weightStr.trim().equals("")) {
             showErrorView(R.string.error_weight_empty);

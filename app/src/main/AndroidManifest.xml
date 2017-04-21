@@ -18,8 +18,21 @@
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_result"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.ivanovi.apps.bmicalculatorpro.MainActivity" />
+        </activity>
+        <activity
+            android:name=".HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="info.ivanovi.apps.bmicalculatorpro.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
