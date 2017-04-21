@@ -1,8 +1,9 @@
 package info.ivanovi.apps.bmicalculatorpro;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
-public class Result {
+public class Result implements Serializable {
 
     private static final DecimalFormat decimalFormat = new DecimalFormat("#.##");
 

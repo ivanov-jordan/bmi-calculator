@@ -6,15 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
-
 public class ResultActivity extends AppCompatActivity {
-
-    private static final DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
     private TextView resultView;
 
-    private double result;
+    private Result result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +18,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         Intent intent = getIntent();
-        result = intent.getDoubleExtra(MainActivity.MESSAGE_RESULT, 0);
+        result = (Result) intent.getSerializableExtra(MainActivity.MESSAGE_RESULT);
 
         resultView = (TextView) findViewById(R.id.resultValue);
         ((Button) findViewById(R.id.backButton)).setOnClickListener(view -> {
@@ -33,12 +29,8 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     private void showResult() {
-        resultView.setText(formatResult(result));
+        resultView.setText(result.getFormattedResult());
         resultView.animate().setDuration(3000).alpha(1f);
-    }
-
-    private String formatResult(double result) {
-        return decimalFormat.format(result);
     }
 
 }
