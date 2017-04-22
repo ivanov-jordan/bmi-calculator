@@ -30,8 +30,6 @@ public class HistoryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(rLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(resultsAdapter);
-
-        resultsAdapter.notifyDataSetChanged();
     }
 
 }
