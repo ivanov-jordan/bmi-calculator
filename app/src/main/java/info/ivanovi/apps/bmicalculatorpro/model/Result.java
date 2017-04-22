@@ -1,4 +1,4 @@
-package info.ivanovi.apps.bmicalculatorpro;
+package info.ivanovi.apps.bmicalculatorpro.model;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
@@ -9,18 +9,12 @@ public class Result implements Serializable {
 
     private Double result;
 
-    public Result() {}
-
     public Result(Double result) {
         this.result = result;
     }
 
-    public double getResult() {
+    public Double getResult() {
         return result;
-    }
-
-    public void setResult(Double result) {
-        this.result = result;
     }
 
     public String getFormattedResult() {

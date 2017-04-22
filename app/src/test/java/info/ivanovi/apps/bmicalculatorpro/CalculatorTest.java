@@ -1,18 +1,14 @@
 package info.ivanovi.apps.bmicalculatorpro;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import info.ivanovi.apps.bmicalculatorpro.core.BMICalculator;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class CalculatorTest {
     @Test
     public void bmi_isCorrect() throws Exception {
-        assertEquals(20, Calculator.calculateBMI(80, 200), 0);
-        assertEquals(24.4, Calculator.calculateBMI(81.7, 1.83), 0.01);
+        Assert.assertEquals(20d, BMICalculator.calculateBMI(80, 200).getResult(), 0);
+        Assert.assertEquals(24.4d, BMICalculator.calculateBMI(81.7, 1.83).getResult(), 0.01);
     }
 }

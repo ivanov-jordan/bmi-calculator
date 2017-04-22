@@ -1,6 +1,8 @@
-package info.ivanovi.apps.bmicalculatorpro;
+package info.ivanovi.apps.bmicalculatorpro.core;
 
-public class Calculator {
+import info.ivanovi.apps.bmicalculatorpro.model.Result;
+
+public class BMICalculator {
 
     public static Result calculateBMI(double weight, int height) {
         double heightInMeters = (double) height / (double) 100;

@@ -6,15 +6,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
+import info.ivanovi.apps.bmicalculatorpro.repository.ResultRepository;
 
 public class HistoryActivity extends AppCompatActivity {
 
-    private List<Result> resultList = new ArrayList<>();
-
-    private RecyclerView recyclerView;
+    private ResultRepository resultRepository;
     private ResultsAdapter resultsAdapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,20 +21,16 @@ public class HistoryActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        resultsAdapter = new ResultsAdapter(resultList);
+        BMIApplication application = (BMIApplication) getApplication();
+        resultRepository = application.getResultRepository();
+
+        resultsAdapter = new ResultsAdapter(resultRepository.getResults());
         RecyclerView.LayoutManager rLayoutManager = new LinearLayoutManager(getApplicationContext());
 
         recyclerView.setLayoutManager(rLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(resultsAdapter);
 
-        prepareData();
-    }
-
-    private void prepareData() {
-        resultList.add(new Result(23d));
-        resultList.add(new Result(25.7d));
-        resultList.add(new Result(31.8d));
         resultsAdapter.notifyDataSetChanged();
     }
 

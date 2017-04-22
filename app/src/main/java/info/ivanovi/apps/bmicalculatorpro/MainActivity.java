@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import info.ivanovi.apps.bmicalculatorpro.core.BMICalculator;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String MESSAGE_RESULT = "bmicalculatorpro.MainActivity.RESULT";
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             double weight = Double.parseDouble(weightStr);
 
             Intent intent = new Intent(this, ResultActivity.class);
-            intent.putExtra(MESSAGE_RESULT, Calculator.calculateBMI(weight, height));
+            intent.putExtra(MESSAGE_RESULT, BMICalculator.calculateBMI(weight, height));
             startActivity(intent);
         }
     }

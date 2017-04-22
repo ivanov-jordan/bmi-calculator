@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import info.ivanovi.apps.bmicalculatorpro.model.Result;
+
 public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.MyViewHolder> {
 
     private List<Result> resultList;
